@@ -90,7 +90,7 @@ const NoteLink:React.FC<LinkProps> = ({
     href,
 }) => {
     const fetcher = (url: string) => fetch(url).then((r) => r.json());
-    const { data, error } = useSWR<dataApiRes, Error>(`/api/get_meta/?url=${ href }`, fetcher);
+    const { data, error } = useSWR<dataApiRes, Error>(`/10-3ch/api/get_meta/?url=${ href }`, fetcher);
 
     if (!error && data && data.metaData.title != "") {
         return (
@@ -121,7 +121,7 @@ const CardLink:React.FC<LinkProps> = ({
     href
 }) => {
     const fetcher = (url: string) => fetch(url).then((r) => r.json());
-    const { data, error } = useSWR<dataApiRes, Error>(`/api/get_meta/?url=${ href }`, fetcher);
+    const { data, error } = useSWR<dataApiRes, Error>(`/10-3ch/api/get_meta/?url=${ href }`, fetcher);
 
     if (!error && data && data.metaData.title != "") {
         return (
