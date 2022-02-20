@@ -90,7 +90,7 @@ const NoteLink:React.FC<LinkProps> = ({
     href,
 }) => {
     const fetcher = (url: string) => fetch(url).then((r) => r.json());
-    const { data, error } = useSWR<dataApiRes, Error>(`/10-3ch/api/get_meta/?url=${ href }`, fetcher);
+    const { data, error } = useSWR<dataApiRes, Error>(`/api/get_meta/?url=${ href }`, fetcher);
 
     if (!error && data && data.metaData.title != "") {
         return (
@@ -107,7 +107,7 @@ const NoteLink:React.FC<LinkProps> = ({
     return (
         <a
             href={ href }
-            className="text-teal-500 hover:underline"
+            className="hover:underline"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -121,7 +121,7 @@ const CardLink:React.FC<LinkProps> = ({
     href
 }) => {
     const fetcher = (url: string) => fetch(url).then((r) => r.json());
-    const { data, error } = useSWR<dataApiRes, Error>(`/10-3ch/api/get_meta/?url=${ href }`, fetcher);
+    const { data, error } = useSWR<dataApiRes, Error>(`/api/get_meta/?url=${ href }`, fetcher);
 
     if (!error && data && data.metaData.title != "") {
         return (
@@ -138,7 +138,7 @@ const CardLink:React.FC<LinkProps> = ({
     return (
         <a
             href={ href }
-            className="text-teal-500 hover:underline"
+            className="grad-hover"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -154,9 +154,7 @@ const BasicLink:React.FC<LinkProps> = ({
     return (
         <a
             href={ href }
-            className="text-teal-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="grad-hover"
         >
             { children }
         </a>
@@ -174,14 +172,14 @@ const LinkCard: React.FC<cardProps> = ({
     return (
         <div
             className={`
-            border border-gray-200 hover:bg-teal-50 rounded grid grid-cols-1 p-2
+            border border-gray-200 bg-white hover:bg-amber-50 rounded grid grid-cols-1 p-2
             md:grid-cols-5 md:p-4
             `}
         >
             <div className="md:col-span-4 flex flex-col justify-between">
                 <p
                 className={`
-                font-bold mb-2 border-b border-teal-200
+                font-bold mb-2 border-b border-amber-200
                 `}
                 >{ data.metaData.title }</p>
                 <p

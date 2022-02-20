@@ -1,10 +1,5 @@
 import React from "react";
 import { HeadingProps, ReactMarkdownProps } from "react-markdown/lib/ast-to-react";
-type HeaderProps = {
-    textColorClass?:string;
-    bgColorClass?: string;
-    borderColorClass?:string;
-} & HeadingProps;
 
 /**
  * 見出し１  
@@ -12,13 +7,11 @@ type HeaderProps = {
  * @params children: React.ReactNode , textColorClass: tailwindClass
  * @returns atom: React.FC
  */
-export const MarkdownSiteTitle:React.FC<HeaderProps> = ({
+export const MarkdownSiteTitle:React.FC<HeadingProps> = ({
     children,
-    textColorClass = "",
 }) => {
     return (
         <h1 className={`
-        ${ textColorClass}
         text-4xl font-semibold mt-6
         md:text-5xl md:font-extrabold
         xl:text-6xl
@@ -31,13 +24,11 @@ export const MarkdownSiteTitle:React.FC<HeaderProps> = ({
  * @params children: React.ReactNode , textColorClass: tailwindClass
  * @return atom: React.FC
  */
-export const MarkdownArticleTitle:React.FC<HeaderProps> = ({
+export const MarkdownArticleTitle:React.FC = ({
     children,
-    textColorClass = "text-black",
 }) => {
     return (
         <h2 className={`
-        ${ textColorClass}
         text-3xl font-semibold mt-4
         md:text-4xl md:font-extrabold
         xl:text-4xl
@@ -50,16 +41,14 @@ export const MarkdownArticleTitle:React.FC<HeaderProps> = ({
  * @params children: React.ReactNode , textColorClass: tailwindClass, borderColorClass: tailwindClass
  * @return atom: React.FC
  */
-export const MarkdownHeader1:React.FC<HeaderProps> = ({
+export const MarkdownHeader1:React.FC<HeadingProps> = ({
     children,
-    textColorClass = "text-black",
-    borderColorClass = "border-teal-400",
 }) => {
     return (
         <h3 
         id={ children.toString() }
         className={`
-        ${ textColorClass } bg-gray-100 border-l-8 ${ borderColorClass }
+         bg-amber-50 border-l-8 border-b-4 border-amber-400
         text-2xl font-semibold mt-6 p-2
         md:text-3xl md:font-extrabold md:p-3
         xl:text-3xl
@@ -72,15 +61,14 @@ export const MarkdownHeader1:React.FC<HeaderProps> = ({
  * @params children: React.ReactNode , borderColorClass: tailwindClass
  * @return atom: React.FC
  */
-export const MarkdownHeader2:React.FC<HeaderProps> = ({
+export const MarkdownHeader2:React.FC<HeadingProps> = ({
     children,
-    borderColorClass = "border-teal-400",
 }) => {
     return (
         <h4 
         id={ children.toString() }
         className={`
-        border-l-4 ${ borderColorClass } pl-1
+        border-l-4 border-b-2 border-amber-400 pl-1
         text-xl font-semibold mt-4
         md:text-2xl md:font-extrabold
         xl:text-2xl
@@ -93,15 +81,14 @@ export const MarkdownHeader2:React.FC<HeaderProps> = ({
  * @params children: React.ReactNode, borderColorClass: tailwindClass
  * @return atom: React.FC
  */
-export const MarkdownHeader3:React.FC<HeaderProps> = ({
+export const MarkdownHeader3:React.FC<HeadingProps> = ({
     children,
-    borderColorClass = "border-teal-400",
 }) => {
     return (
         <h5 
         id={ children.toString() }
         className={`
-        border-b-2 ${ borderColorClass }
+        border-l-4 border-amber-400
         text-lg font-semibold mt-2
         md:text-xl md:font-extrabold
         xl:text-xl
@@ -114,7 +101,7 @@ export const MarkdownHeader3:React.FC<HeaderProps> = ({
  * @params children: React.ReactNode
  * @return atom: React.FC
  */
-export const MarkdownHeader4:React.FC<HeaderProps> = ({
+export const MarkdownHeader4:React.FC<HeadingProps> = ({
     children
 }) => {
     return (
@@ -131,16 +118,104 @@ export const MarkdownHeader4:React.FC<HeaderProps> = ({
 /**
  * オーダードリスト
  * パラグラフタグ
- * @params text: string, textColorClass: tailwindClass 
+ * @params 
  * @returns React.FC
  */
  export const MarkdownOli:React.FC<ReactMarkdownProps> = ({
     children,
 }) => {
     return (
-        <div
-        
+        <ol
+            className="list-decimal list-inside"
         >
+            { children }
+        </ol>
+    )
+}
+
+/**
+ * アンオーダードリスト
+ * パラグラフタグ
+ * @params 
+ * @returns React.FC
+ */
+ export const MarkdownUli:React.FC<ReactMarkdownProps> = ({
+    children,
+}) => {
+    return (
+        <ul
+            className="list-disc list-inside"
+        >
+            { children }
+        </ul>
+    )
+}
+
+/**
+ * テーブル
+ * パラグラフタグ
+ * @params 
+ * @returns React.FC
+ */
+ export const MarkdownTh:React.FC<ReactMarkdownProps> = ({
+    children,
+}) => {
+    return (
+        <th
+            className="border border-gray-400 bg-gray-100 px-4 py-1"
+        >
+            { children }
+        </th>
+    )
+}
+
+type tdProps = {
+    style: (React.CSSProperties & Record<string, unknown>) | undefined;
+    children: React.ReactNode;
+}
+/**
+ * テーブル
+ * パラグラフタグ
+ * @params 
+ * @returns React.FC
+ */
+ export const MarkdownTd:React.FC<tdProps> = ({
+    children,
+    style
+}) => {
+    let pos:string = "text-left";
+    if (style) {
+        if (style.textAlign == "center") {
+            pos = "text-center";
+        } else if (style.textAlign == "right") {
+            pos = "text-right"
+        }
+    }
+
+    return (
+        <td
+            className={`border border-gray-400 bg-white ${ pos } p-1`}
+        >
+            { children }
+        </td>
+    )
+}
+
+/**
+ * ブロッククオート
+ * パラグラフタグ
+ * @params 
+ * @returns React.FC
+ */
+ export const MarkdownBlockQuort:React.FC<ReactMarkdownProps> = ({
+    children,
+}) => {
+    return (
+        <div className={`
+        border-l-4 border-gray-200 ml-4 text-gray-400
+        my-4
+        md:text-lg md:my-6
+        `}>
             { children }
         </div>
     )
@@ -159,10 +234,37 @@ type TextProps = {
 export const MarkdownText:React.FC<TextProps> = ({
     children,
 }) => {
+    if (typeof(children) != "string") {
+        return (
+            <div className={`
+            my-4
+            md:text-lg md:my-6
+            `}>{ children }</div>
+        )
+    }
     return (
         <p className={`
         my-4
         md:text-lg md:my-6
         `}>{ children }</p>
+    )
+}
+
+/**
+ * 画像
+ * パラグラフタグ
+ * @params 
+ * @returns React.FC
+ */
+type MarkdownImgProps = {
+    src: string,
+    alt: string,
+}
+export const MarkdownImg:React.FC<MarkdownImgProps> = ({
+    src,
+    alt,
+}) => {
+    return (
+        <img src={ src } alt={ alt } className="m-auto rounded"/>
     )
 }
