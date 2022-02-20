@@ -80,8 +80,14 @@ https://youtu.be/2r2ec_sAlGs
 
 https://note.com/france_go_/n/n8ac5b8942995
 
-https://twitter.com/TOYOTA_PR/status/1481883784525926400
+https://photoshopvip.net/133583
 
+# 画像
+
+
+## 通常の画像
+
+![画像](https://images.pexels.com/photos/11041568/pexels-photo-11041568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
 
 # 引用
 > テキスト
@@ -112,7 +118,7 @@ https://twitter.com/TOYOTA_PR/status/1481883784525926400
 # フローチャート
 
 ```mermaid
-graph LR
+graph TB
   A[起床] --> B[朝食]
   B --> C[作業]
   C --> D[昼食]

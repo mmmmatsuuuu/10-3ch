@@ -4,7 +4,20 @@ import "github-markdown-css";
 import remarkGfm from "remark-gfm";
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import { MarkdownHeader1, MarkdownHeader2, MarkdownHeader3, MarkdownHeader4, MarkdownText } from "./tags";
+import { 
+    MarkdownArticleTitle, 
+    MarkdownHeader1, 
+    MarkdownHeader2, 
+    MarkdownHeader3, 
+    MarkdownHeader4, 
+    MarkdownText, 
+    MarkdownOli, 
+    MarkdownUli,
+    MarkdownTh,
+    MarkdownTd,
+    MarkdownImg,
+    MarkdownBlockQuort,
+} from "./tags";
 import { CodeBlock } from "./codeBlock";
 import { MarkdownLink } from "./linkCard";
 
@@ -33,14 +46,10 @@ export const ArticleComponent: React.FC<ArticleType> = ({
     className
 }) => {
     return (
-        <div className={`
-        bg-white p-4 px-2 pb-8
-        md:pt-8 md:px-12 md:pb-20 md:rounded-xl
-        lg:px-24
-        `}>
-            <ArticleTitle>
+        <div>
+            <MarkdownArticleTitle>
                 { articleData.title }
-            </ArticleTitle>
+            </MarkdownArticleTitle>
             <ReactMarkdown
                 className={ className }
                 remarkPlugins={[remarkGfm, remarkMath]}
@@ -53,23 +62,17 @@ export const ArticleComponent: React.FC<ArticleType> = ({
                     h4: MarkdownHeader4,
                     p: MarkdownText,
                     a: MarkdownLink,
+                    ol: MarkdownOli,
+                    ul: MarkdownUli,
+                    th: MarkdownTh,
+                    td: ({ style, children }) => <MarkdownTd style={ style } children={ children }/>,
+                    img: ({src, alt}) => <MarkdownImg src={ src ? src : "" } alt={ alt ? alt : "" } />,
+                    blockquote: MarkdownBlockQuort,
                     code: CodeBlock,
                 }}
             >
                 { articleData.article ? articleData.article : "" }
             </ReactMarkdown>
         </div>
-    )
-}
-
-const ArticleTitle:React.FC = ({
-    children,
-}) => {
-    return (
-        <h2 className={`
-        text-3xl font-semibold mt-4
-        md:text-4xl md:font-extrabold
-        xl:text-4xl
-        `}>{ children }</h2>
     )
 }

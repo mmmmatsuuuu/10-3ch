@@ -10,6 +10,7 @@
   "dependencies": {
     "@meltwater/fetch-favicon": "^1.0.4",
     "@types/react-syntax-highlighter": "^13.5.2",
+    "dotenv": "^16.0.0",
     "github-markdown-css": "^5.1.0",
     "gray-matter": "^4.0.3",
     "jsdom": "^19.0.0",

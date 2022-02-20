@@ -38,8 +38,10 @@ const CodeBlock: CodeComponent | ReactMarkdownNames = ({
     }
 
     return (
-        <div className="relative">
-            <div className="absolute top-0 right-0 bg-teal-300 px-3 rounded-sm rounded-tr-none">
+        <div 
+            className="relative code"
+        >
+            <div className="absolute top-0 right-0 bg-amber-300 px-3 rounded">
                 { name }
             </div>
             <SyntaxHighlighter language={ lang } style={darcula} >
