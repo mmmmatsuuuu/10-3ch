@@ -11,7 +11,7 @@ export const Header:React.FC = () => {
             >
                 <li className="m-2">
                     <Link
-                        href="/crunch-time/"
+                        href={`${process.env.NEXT_PUBLIC_PATH}/crunch-time/`}
                     >
                     <a className="grad-hover">
                         Crunch Time
@@ -20,7 +20,7 @@ export const Header:React.FC = () => {
                 </li>
                 <li className="m-2">
                     <Link
-                        href="/it-news-recommend/"
+                        href={`${process.env.NEXT_PUBLIC_PATH}/it-news-recommend/`}
                     >
                     <a className="grad-hover">
                         IT News Recommend
@@ -29,7 +29,7 @@ export const Header:React.FC = () => {
                 </li>
                 <li className="m-2">
                     <Link
-                        href="/over-the-fence/"
+                        href={`${process.env.NEXT_PUBLIC_PATH}/over-the-fence/`}
                     >
                     <a className="grad-hover">
                         Over The Fence

@@ -7,7 +7,7 @@ export const TableOfContents: React.FC<navProps> = ({
 }) => {
     return (
         <nav
-            className={`h-80 overflow-scroll ${clsName}`}
+            className={`h-80 overflow-y-scroll ${clsName}`}
         >
         </nav>
     )

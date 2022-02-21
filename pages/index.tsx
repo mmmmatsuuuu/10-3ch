@@ -7,10 +7,9 @@ const Home: NextPage = () => {
     <Layout
       pageTitle='top'
     >
-      <main className='h-screen flex flex-col justify-center items-center'>
+      <main className='h-screen flex flex-col justify-center items-center bg-gradient-to-r from-green-400 to-sky-400'>
         <img src={ `${ process.env.NEXT_PUBLIC_PATH }/logo.svg`} className='h-1/2' />
         <h1 className='font-black text-3xl'>Coming Soon...</h1>
-        <a href={ `${ process.env.NEXT_PUBLIC_PATH }/sample`}>sample</a>
       </main>
     </Layout>
   )
