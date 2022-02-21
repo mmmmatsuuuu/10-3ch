@@ -4,7 +4,7 @@ const nextConfig = {
     locales: ['en', 'ja'],
     defaultLocale: 'ja',
   },
-  basePath: process.env.GITHUB_ACTIONS ? "/10-3ch" : "",
+  // basePath: process.env.GITHUB_ACTIONS ? "/10-3ch" : "",
   trailingSlash: true,
   reactStrictMode: true,
 }
