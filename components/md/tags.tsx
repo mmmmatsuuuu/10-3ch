@@ -48,7 +48,7 @@ export const MarkdownHeader1:React.FC<HeadingProps> = ({
         <h3 
         id={ children.toString() }
         className={`
-         bg-amber-50 border-l-8 border-b-4 border-amber-400
+         bg-sky-50 border-l-8 border-b-4 border-sky-400
         text-2xl font-semibold mt-6 p-2
         md:text-3xl md:font-extrabold md:p-3
         xl:text-3xl
@@ -68,7 +68,7 @@ export const MarkdownHeader2:React.FC<HeadingProps> = ({
         <h4 
         id={ children.toString() }
         className={`
-        border-l-4 border-b-2 border-amber-400 pl-1
+        border-l-4 border-b-2 border-sky-400 pl-1
         text-xl font-semibold mt-4
         md:text-2xl md:font-extrabold
         xl:text-2xl
@@ -88,7 +88,7 @@ export const MarkdownHeader3:React.FC<HeadingProps> = ({
         <h5 
         id={ children.toString() }
         className={`
-        border-l-4 border-amber-400
+        border-l-4 border-sky-400
         text-lg font-semibold mt-2
         md:text-xl md:font-extrabold
         xl:text-xl

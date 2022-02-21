@@ -30,20 +30,47 @@ a {
         ),
         linear-gradient(
         to right,
-        rgba(255, 0, 0, 1),
-        rgba(255, 0, 180, 1),
-        rgba(0, 100, 200, 1)
+        #34d399,
+        #7dd3fc,
+        #1d4ed8
     );
-    background-size: 100% 3px, 0 3px;
+    background-size: 100% 5px, 0 5px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 400ms;
 }
 
 .grad-hover:hover {
-    background-size: 0 3px, 100% 3px;
+    background-size: 0 5px, 100% 5px;
 }
 
 .code > pre {
     border-radius: 0.25rem;
+}
+
+.toc {
+    /* 目次のスタイル */
+}
+.toc li {
+    /* 目次のリストのスタイル */
+    padding-left: 1rem;
+    width: 100%;
+    list-style-position: inside;
+    line-height: 1.8rem;
+}
+.toc a {
+    /* 目次のリンクのスタイル */
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border: solid 1px #E5E7EB;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.toc a.is-active-link {
+    /* 現在アクティブになっている目次のスタイル */
+    font-weight: bold;
+    background-color: #E5E7EB;
 }

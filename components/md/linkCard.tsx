@@ -107,7 +107,7 @@ const NoteLink:React.FC<LinkProps> = ({
     return (
         <a
             href={ href }
-            className="hover:underline"
+            className="grad-hover"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -172,14 +172,14 @@ const LinkCard: React.FC<cardProps> = ({
     return (
         <div
             className={`
-            border border-gray-200 bg-white hover:bg-amber-50 rounded grid grid-cols-1 p-2
+            border border-gray-200 bg-white hover:bg-sky-50 rounded grid grid-cols-1 p-2
             md:grid-cols-5 md:p-4
             `}
         >
             <div className="md:col-span-4 flex flex-col justify-between">
                 <p
                 className={`
-                font-bold mb-2 border-b border-amber-200
+                font-bold mb-2 border-b border-sky-200
                 `}
                 >{ data.metaData.title }</p>
                 <p
