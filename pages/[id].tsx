@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import Head from 'next/head';
+import tocbot from 'tocbot';
 import Layout from '../components/layout';
 import { getPostIds, getPostData } from '../utils/posts';
 import { ArticleComponent } from '../components/md/article';
+import { TableOfContents } from '../components/sidebar/tableOfContents';
 
 export type mdArticleType = {
     filename: string,
@@ -20,18 +22,40 @@ type articleProps = {
 }
 
 const Post: NextPage<articleProps> = ({ postData }) => {
+
+    useEffect(() => {
+        tocbot.init({
+            tocSelector: '.toc',
+            contentSelector: '.article-body',
+            headingSelector: 'h3',
+        })
+    
+        return () => tocbot.destroy()
+    }, []);
+
     return (
         <Layout
             pageTitle={ postData.title || "記事" }
         >
-
-            <main className='w-screen bg-gradient-to-t from-sky-400 to-emerald-400'>
-                <div className='max-w-screen-lg m-auto'>
+            <div
+            className='max-w-screen-xl h-full m-auto grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 py-4'
+            >
+                <div className='md:col-span-2 xl:col-span-3 bg-white rounded p-1 md:p-4 xl:px-8 article-body'>
                     <ArticleComponent
                         articleData={ postData }
                     />
                 </div>
-            </main>
+                <div className='hidden md:block h-full md:col-span-1'>
+                    <div className='sticky top-4'>
+                        <div className="bg-white rounded p-2">
+                            <p className="font-bold p-2 border-b-2 border-sky-400">目次</p>
+                            <TableOfContents
+                                clsName='toc'
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Layout>
     )
 }
