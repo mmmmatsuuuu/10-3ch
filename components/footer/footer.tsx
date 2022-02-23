@@ -3,7 +3,7 @@ export const Footer:React.FC = () => {
         <div className='max-w-screen-xl m-auto bg-gradient-to-r from-green-400 to-sky-400 pt-1'>
             <div className='bg-white grid grid-cols-1 md:grid-cols-3 p-2'>
                 <div className="md:col-span-2 flex">
-                    <img src={`${process.env.NEXT_PUBLIC_BASE_PATH }/logo.svg`} alt="logo" className="md:px-8 w-16 md:w-48"/>
+                    <img src={`${process.env.NEXT_PUBLIC_BASE_PATH }/logo_small.svg`} alt="logo" className="md:px-8 w-16 md:w-32"/>
                     <div>
                         <table className="text-gray-400">
                             <tbody>
@@ -22,8 +22,8 @@ export const Footer:React.FC = () => {
                 <div className="hidden md:block">
                 </div>
             </div>
-            <div className="bg-white text-center mb-4">
-            copyright © 10.3ch All Rights Reserved.
+            <div className="bg-white text-center text-gray-400 mb-4">
+            copyright © 2022 10.3ch All Rights Reserved.
             </div>
         </div>
     )
