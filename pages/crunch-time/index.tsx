@@ -17,7 +17,7 @@ const CrunchTime:NextPage = () => {
                     試練(試験問題や入試問題)の解説をまとめたページ。または、解説を見て知識・思考を深めるモグモグタイム。
                     </p>
                     <Link
-                        href={`${process.env.NEXT_PUBLIC_BASE_PATH }/crunch-time/sample`}
+                        href={`/crunch-time/sample`}
                     >
                     <a className="block text-center text-white bg-sky-400 px-16 py-4 rounded-md hover:bg-sky-300">sample</a>
                     </Link>
