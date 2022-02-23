@@ -6,14 +6,14 @@ export const CrunchTimeNav: React.FC = () => {
             <ul className="">
                 <li >
                     <Link
-                        href={`${process.env.NEXT_PUBLIC_PATH}/crunch-time/`}
+                        href={`${process.env.NEXT_PUBLIC_BASE_PATH }/crunch-time/`}
                     >
                         <a className="block text-gray-400 ml-8 pl-2 py-2 border-b hover:border-sky-400 hover:text-black">本年度</a>
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href={`${process.env.NEXT_PUBLIC_PATH}/crunch-time/archive`}
+                        href={`${process.env.NEXT_PUBLIC_BASE_PATH }/crunch-time/archive`}
                     >
                         <a className="block text-gray-400 ml-8 pl-2 py-2 border-b hover:border-sky-400 hover:text-black">過年度</a>
                     </Link>
@@ -34,14 +34,14 @@ export const OverTheFenceNav: React.FC = () => {
             <ul className="">
                 <li >
                     <Link
-                        href={`${process.env.NEXT_PUBLIC_PATH}/crunch-time/`}
+                        href={`${process.env.NEXT_PUBLIC_BASE_PATH }/crunch-time/`}
                     >
                         <a className="block text-gray-400 ml-8 pl-2 py-2 border-b hover:border-sky-400 hover:text-black">本年度</a>
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href={`${process.env.NEXT_PUBLIC_PATH}/crunch-time/archive`}
+                        href={`${process.env.NEXT_PUBLIC_BASE_PATH }/crunch-time/archive`}
                     >
                         <a className="block text-gray-400 ml-8 pl-2 py-2 border-b hover:border-sky-400 hover:text-black">過年度</a>
                     </Link>
