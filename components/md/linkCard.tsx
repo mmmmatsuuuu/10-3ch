@@ -52,6 +52,12 @@ export const MarkdownLink: React.FC = ({
         // note link
         return <NoteLink href={ href } />
 
+    } else if (href.indexOf("/") == 0) {
+        // その他 link
+        return <InternalLink href={ href }>
+            { children }
+        </InternalLink>
+
     } else if (href == children as string) {
         // その他 link
         return <CardLink href={ href } />
@@ -154,6 +160,20 @@ const BasicLink:React.FC<LinkProps> = ({
     return (
         <a
             href={ href }
+            className="grad-hover"
+        >
+            { children }
+        </a>
+    )
+}
+
+const InternalLink:React.FC<LinkProps> = ({
+    children,
+    href,
+}) => {
+    return (
+        <a
+            href={`${ process.env.NEXT_PUBLIC_BASE_PATH }${ href }`}
             className="grad-hover"
         >
             { children }
