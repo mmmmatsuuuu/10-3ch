@@ -5,7 +5,7 @@ export const Footer:React.FC = () => {
                 <div className="md:col-span-2 flex">
                     <img src={`${process.env.NEXT_PUBLIC_BASE_PATH }/logo.svg`} alt="logo" className="md:px-8 w-16 md:w-48"/>
                     <div>
-                        <table>
+                        <table className="text-gray-400">
                             <tbody>
                                 <tr>
                                     <td className="pr-4">管理者</td>

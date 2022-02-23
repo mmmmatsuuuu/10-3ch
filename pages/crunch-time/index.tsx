@@ -1,9 +1,16 @@
-import { NextPage } from "next";
-import Link from "next/link";
+import { NextPage, GetStaticProps } from "next";
+import { getPostDatas } from "../../utils/posts";
 import Layout from '../../components/layout';
 import { CrunchTimeNav } from "../../components/sidebar/sideMenu";
+import { mdArticleType, ArticleList } from "../../components/md/article";
+import { sortByDate } from "../../utils/sort";
 
-const CrunchTime:NextPage = () => {
+type articleProps = {
+    articles: mdArticleType[];
+}
+const CrunchTime:NextPage<articleProps> = ({
+    articles
+}) => {
     return (
         <Layout
             pageTitle="Crunch Time"
@@ -16,11 +23,7 @@ const CrunchTime:NextPage = () => {
                     <p className="mb-24">
                     試練(試験問題や入試問題)の解説をまとめたページ。または、解説を見て知識・思考を深めるモグモグタイム。
                     </p>
-                    <Link
-                        href={`/crunch-time/sample`}
-                    >
-                    <a className="block text-center text-white bg-sky-400 px-16 py-4 rounded-md hover:bg-sky-300">sample</a>
-                    </Link>
+                    <ArticleList articles={ articles } />
                 </div>
                 <div className='hidden md:block h-full md:col-span-1'>
                     <div className='sticky top-4'>
@@ -31,6 +34,30 @@ const CrunchTime:NextPage = () => {
             </div>
         </Layout>
     )
+}
+
+export const getStaticProps:GetStaticProps = async() => {
+    const postDatas = getPostDatas();
+    const articles:mdArticleType[] = [];
+
+    for (let i = 0; i < postDatas.length; i++) {
+        const a = postDatas[i];
+        const date:number = parseInt(a.date.split("/")[0])* 10000 
+                            + parseInt(a.date.split("/")[1]) * 100
+                            + parseInt(a.date.split("/")[2]);
+
+        if (a.published && a.category == "crunch-time" && date >= parseInt(process.env.NEXT_PUBLIC_THIS_YEAR || "0")) {
+            articles.push(a);
+        }
+    }
+
+    const sortedArticles = sortByDate(articles);
+
+    return {
+        props: {
+            articles: sortedArticles,
+        }
+    }
 }
 
 export default CrunchTime;
