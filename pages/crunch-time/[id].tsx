@@ -6,17 +6,7 @@ import { getPostIds, getPostData } from '../../utils/posts';
 import { ArticleComponent } from '../../components/md/article';
 import { TableOfContents } from '../../components/sidebar/tableOfContents';
 import { CrunchTimeNav } from '../../components/sidebar/sideMenu';
-
-export type mdArticleType = {
-    filename: string,
-    title?: string,
-    topics?: string[],
-    date?: string,
-    category?: string,
-    published?: boolean,
-    image?: string,
-    article?: string,
-}
+import { mdArticleType } from "../../components/md/article";
 
 type articleProps = {
     postData: mdArticleType;
@@ -64,6 +54,7 @@ const CrunchTimeArticle: NextPage<articleProps> = ({ postData }) => {
 }
 
 export const getStaticPaths:GetStaticPaths = async() => {
+    // ファイル名一覧を取得
     const paths = getPostIds();
     return {
         paths,
@@ -72,8 +63,10 @@ export const getStaticPaths:GetStaticPaths = async() => {
 }
 
 export const getStaticProps:GetStaticProps = async({ params }) => {
+    // ファイルパスの取得
     const path: string = params ? params.id as string : "";
 
+    // 該当するファイルパスのマークダウンファイルの取得
     const postData = getPostData(path);
 
     return {

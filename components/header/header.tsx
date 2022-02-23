@@ -1,6 +1,9 @@
-import Link from "next/link"
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Header:React.FC = () => {
+    const router = useRouter();
+    const pathname = router.pathname.split("/")[1];
     return (
         <div className="max-w-screen-xl h-full m-auto flex justify-between items-center">
             <a 
@@ -13,33 +16,43 @@ export const Header:React.FC = () => {
                 className="flex justify-center items-center font-bold"
             >
                 <li className="m-2">
-                    <Link
-                        href={`/crunch-time/`}
-                    >
-                    <a className="grad-hover">
-                        Crunch Time
-                    </a>
-                    </Link>
+                    <InternalLink name="Crunch Time" thisPath="crunch-time" path={ pathname } />
                 </li>
                 <li className="m-2">
-                    <Link
-                        href={`/it-news-recommend/`}
-                    >
-                    <a className="grad-hover">
-                        IT News Recommend
-                    </a>
-                    </Link>
+                    <InternalLink name="IT News Recommend" thisPath="it-news-recommend" path={ pathname } />
                 </li>
                 <li className="m-2">
-                    <Link
-                        href={`/over-the-fence/`}
-                    >
-                    <a className="grad-hover">
-                        Over The Fence
-                    </a>
-                    </Link>
+                    <InternalLink name="Over The Fence" thisPath="over-the-fence" path={ pathname } />
                 </li>
             </ul>
         </div>
     )
+}
+
+const InternalLink:React.FC<{
+    name: string;
+    path: string;
+    thisPath: string;
+}> = ({name, path, thisPath}) => {
+    if (path == thisPath) {
+        return (
+            <Link href={`/${ thisPath }`}>
+                <a 
+                    className="text-gray-400"
+                >
+                    { name }
+                </a>
+            </Link>
+        );
+    } else {
+        return (
+            <Link href={`/${ thisPath }`}>
+                <a 
+                    className="grad-hover"
+                >
+                    { name }
+                </a>
+            </Link>
+        );
+    }
 }
