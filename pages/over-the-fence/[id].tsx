@@ -6,17 +6,7 @@ import { getPostIds, getPostData } from '../../utils/posts';
 import { ArticleComponent } from '../../components/md/article';
 import { TableOfContents } from '../../components/sidebar/tableOfContents';
 import { CrunchTimeNav } from '../../components/sidebar/sideMenu';
-
-export type mdArticleType = {
-    filename: string,
-    title?: string,
-    topics?: string[],
-    date?: string,
-    category?: string,
-    published?: boolean,
-    image?: string,
-    article?: string,
-}
+import { mdArticleType } from "../../components/md/article";
 
 type articleProps = {
     postData: mdArticleType;
