@@ -19,7 +19,7 @@ export const Header:React.FC = () => {
                     <InternalLink name="Crunch Time" thisPath="crunch-time" path={ pathname } />
                 </li>
                 <li className="m-2">
-                    <InternalLink name="IT News Recommend" thisPath="it-news-recommend" path={ pathname } />
+                    <InternalLink name="My Recommend" thisPath="my-recommend" path={ pathname } />
                 </li>
                 <li className="m-2">
                     <InternalLink name="Over The Fence" thisPath="over-the-fence" path={ pathname } />

@@ -18,7 +18,7 @@ const CrunchTime:NextPage<articleProps> = ({
             <div
             className='max-w-screen-xl h-full m-auto grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 py-4'
             >
-                <div className='md:col-span-2 xl:col-span-3 bg-white rounded p-1 md:p-4 xl:px-8 h-screen'>
+                <div className='md:col-span-2 xl:col-span-3 bg-white rounded p-1 md:p-4 xl:px-8 mb-24'>
                     <h2 className="text-3xl font-bold mb-4 border-b border-sky-400">Crunch Time</h2>
                     <p className="mb-24">
                     試練(試験問題や入試問題)の解説をまとめたページ。または、解説を見て知識・思考を深めるモグモグタイム。

@@ -48,6 +48,11 @@ a {
     border-radius: 0.25rem;
 }
 
+.article-body table, ul, ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .toc {
     /* 目次のスタイル */
 }
