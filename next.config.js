@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n: {
-    locales: ['en', 'ja'],
-    defaultLocale: 'ja',
-  },
-  // basePath: process.env.GITHUB_ACTIONS ? "/10-3ch" : "",
-  trailingSlash: true,
+  assetPrefix: process.env.BASE_PATH || '',
+  basePath: process.env.BASE_PATH || '',
   reactStrictMode: true,
 }
 

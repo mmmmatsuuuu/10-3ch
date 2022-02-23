@@ -12,8 +12,8 @@ const Layout:NextPage<headProps> = ({ children, pageTitle }) => {
         <>
             <Head>
                 <title>{ process.env.NEXT_PUBLIC_SITE_NAME } | { pageTitle }</title>
-                <meta name="description" content={ process.env.NEXT_PUBLIC_DESCRIPTION} />
-                <link rel="icon" href={ `${ process.env.NEXT_PUBLIC_PATH }/favicon.ico`} />
+                <meta name="description" content={ process.env.NEXT_PUBLIC_DESCRIPTION } />
+                <link rel="icon" href={ `${ process.env.NEXT_PUBLIC_BASE_PATH }/favicon.ico`} />
             </Head>
             <div className='relative w-screen h-screen'>
                 <header className='fixed top-0 w-screen h-16 border-b z-50'>
