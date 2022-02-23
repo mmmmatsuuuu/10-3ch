@@ -26,6 +26,14 @@ const CodeBlock: CodeComponent | ReactMarkdownNames = ({
         }
     }
 
+    if (inline ) {
+        return (
+            <div className="inline bg-gray-200 p-1 px-2 rounded">
+                { children }
+            </div>
+        )
+    }
+
     // コードがmermaid記述のグラフの場合
     if (lang === "mermaid") {
         return (
