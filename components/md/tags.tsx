@@ -264,7 +264,12 @@ export const MarkdownImg:React.FC<MarkdownImgProps> = ({
     src,
     alt,
 }) => {
+    if (src[0] == "/") {
+        return (
+            <img src={`${ process.env.NEXT_PUBLIC_BASE_PATH }${ src }`} alt={ alt } className="m-auto rounded"/>
+        );
+    }
     return (
         <img src={ src } alt={ alt } className="m-auto rounded"/>
-    )
+    );
 }
