@@ -35,7 +35,7 @@ export const OverTheFenceCard:React.FC<OverTheFenceProps> = ({
                         <ul className="list-disc list-inside text-gray-600 m-0">
                             { contents.map(c => {
                                 return (
-                                    <li>{ c }</li>
+                                    <li key={ c }>{ c }</li>
                                 )
                             })}
                         </ul>

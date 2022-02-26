@@ -33,7 +33,7 @@ const  CryptographyPage:NextPage<articleProps> = ({
                     <ul className="list-disc list-inside text-gray-600">
                         { cryptography.contents.map(c => {
                             return (
-                                <li>{ c }</li>
+                                <li key={ c }>{ c }</li>
                             );
                         })}
                     </ul>
