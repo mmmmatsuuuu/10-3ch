@@ -23,7 +23,10 @@ const CrunchTimeArchive:NextPage<articleProps> = ({
                     <p className="mb-24">
                     過去の試練(試験問題や入試問題)の解説をまとめたページ。または、解説を見て知識・思考を深めるモグモグタイム。
                     </p>
-                    <ArticleList articles={ articles } />
+                    <ArticleList 
+                        articles={ articles }
+                        dir="crunch-time"
+                    />
                 </div>
                 <div className='hidden md:block h-full md:col-span-1'>
                     <div className='mb-12'>
