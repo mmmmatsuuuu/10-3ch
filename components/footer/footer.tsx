@@ -1,6 +1,6 @@
 export const Footer:React.FC = () => {
     return (
-        <div className='max-w-screen-xl m-auto bg-gradient-to-r from-green-400 to-sky-400 pt-1'>
+        <div className='max-w-screen-xl m-auto bg-gradient-to-r from-green-400 to-sky-400 pt-[1px]'>
             <div className='bg-white grid grid-cols-1 md:grid-cols-3 p-2'>
                 <div className="md:col-span-2 flex">
                     <img src={`${process.env.NEXT_PUBLIC_BASE_PATH }/logo_small.svg`} alt="logo" className="md:px-8 w-16 md:w-32"/>

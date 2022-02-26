@@ -55,7 +55,7 @@ const CrunchTimeArticle: NextPage<articleProps> = ({ postData }) => {
 
 export const getStaticPaths:GetStaticPaths = async() => {
     // ファイル名一覧を取得
-    const paths = getPostIds();
+    const paths = getPostIds(["posts", "crunch-time"]);
     return {
         paths,
         fallback: false
@@ -67,7 +67,7 @@ export const getStaticProps:GetStaticProps = async({ params }) => {
     const path: string = params ? params.id as string : "";
 
     // 該当するファイルパスのマークダウンファイルの取得
-    const postData = getPostData(path);
+    const postData = getPostData(["posts", "crunch-time"], path);
 
     return {
         props: {

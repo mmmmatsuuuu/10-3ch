@@ -37,14 +37,14 @@ const CrunchTimeArchive:NextPage<articleProps> = ({
 }
 
 export const getStaticProps:GetStaticProps = async() => {
-    const postDatas = getPostDatas();
+    const postDatas = getPostDatas(["posts", "crunch-time"]);
     const articles:mdArticleType[] = [];
 
     for (let i = 0; i < postDatas.length; i++) {
         const a = postDatas[i];
         const date:number = parseInt(a.date.split("/")[0])* 10000 
                             + parseInt(a.date.split("/")[1]) * 100
-                            + parseInt(a.date.split("/")[2]);
+                            + parseInt(a.date.split("/")[2].slice(0, 2));
 
         if (a.published && a.category == "crunch-time" && date < parseInt(process.env.NEXT_PUBLIC_THIS_YEAR || "0")) {
             articles.push(a);
