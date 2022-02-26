@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Layout from '../../components/layout';
-import { OverTheFenceNav } from "../../components/sidebar/sideMenu";
+import { OverTheFenceCard, OverTheFenceProps } from "../../components/common/card";
+import { cryptography } from "./cryptography/index";
 
 const OverTheFence:NextPage = () => {
     return (
@@ -8,21 +9,23 @@ const OverTheFence:NextPage = () => {
             pageTitle="Over The Fence"
         >
             <div
-            className='max-w-screen-xl h-full m-auto grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 py-4'
+            className='max-w-screen-xl h-full m-auto gap-4 py-4'
             >
-                <div className='md:col-span-2 xl:col-span-3 bg-white rounded p-1 md:p-4 xl:px-8'>
+                <div className='bg-white rounded p-1 md:p-4 xl:px-8'>
                     <h2 className="text-3xl font-bold mb-4 border-b border-sky-400">Over The Fence</h2>
                     <p className="mb-24">
                     フェンスを飛び越えて授業では扱えなかったちょっと高度な内容にアクセスしてみよう。
                     </p>
-                    <div className="h-screen flex justify-center items-center text-5xl font-black">
-                        coming soon...
-                    </div>
-                </div>
-                <div className='hidden md:block h-full md:col-span-1'>
-                    <div className='sticky top-4'>
-                        <p className="font-bold p-2 mb-2 border-b-2 border-sky-400">コンテンツ</p>
-                        <OverTheFenceNav />
+                    <div className="flex flex-wrap">
+                        <div className="basis-full md:basis-1/2 xl:basis-1/3">
+                            <OverTheFenceCard
+                                title={ cryptography.title }
+                                description={ cryptography.description }
+                                image={ cryptography.image }
+                                href={ cryptography.href }
+                                contents={ cryptography.contents }
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
