@@ -90,10 +90,12 @@ const DateComponent:React.FC<{ date: string}> = ({ date }) => {
 
 type ArticleListProps = {
     articles: mdArticleType[];
+    dir     : string;
 }
 
 export const ArticleList: React.FC<ArticleListProps> = ({
-    articles
+    articles,
+    dir,
 }) => {
     if (articles.length > 0) {
         return (
@@ -101,7 +103,7 @@ export const ArticleList: React.FC<ArticleListProps> = ({
             { articles.map(a => {
                 return (
                     <Link
-                        href={`/crunch-time/${ a.filename }`}
+                        href={`/${ dir }/${ a.filename }`}
                         key={ a.filename }
                     >
                     <a className="block bg-gray-300 hover:bg-gradient-to-r hover:from-green-400 hover:to-sky-400 rounded-xl my-2 p-1">
