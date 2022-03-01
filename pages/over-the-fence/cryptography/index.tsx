@@ -2,7 +2,7 @@ import { NextPage, GetStaticProps } from "next";
 import { getPostDatas } from "../../../utils/posts";
 import Layout from '../../../components/layout';
 import { mdArticleType, ArticleList } from "../../../components/md/article";
-import { sortByDate } from "../../../utils/sort";
+import { sortByTitle } from "../../../utils/sort";
 import { OverTheFenceProps } from "../../../components/common/card";
 
 export const cryptography:OverTheFenceProps = {
@@ -39,16 +39,17 @@ const Page:NextPage<articleProps> = ({
             className='max-w-screen-xl h-full m-auto py-4'
             >
                 <div className='md:col-span-2 xl:col-span-3 bg-white rounded p-1 md:p-4 xl:px-8 mb-24'>
-                    <h2 className="text-3xl font-bold mb-4 border-b border-sky-400">{ cryptography.title }</h2>
+                    <h2 className="text-4xl font-bold mb-2">{ cryptography.title }</h2>
+                    <div className="flex items-center">
+                        <div className="h-2 w-32 bg-gradient-to-r from-green-400 to-sky-400"></div>
+                        <div className="h-2 w-full bg-slate-100"></div>
+                    </div>
                     <img src={ cryptography.image.src} alt={ cryptography.image.alt } className="m-auto w-1/2"/>
-                    <p>{ cryptography.description }</p>
-                    <ul className="list-disc list-inside text-gray-600">
-                        { cryptography.contents.map(c => {
-                            return (
-                                <li key={ c }>{ c }</li>
-                            );
-                        })}
-                    </ul>
+                    <div className="flex items-center">
+                        <div className="w-1/4 h-[1px] bg-gray-400"></div>
+                        <p className="w-1/2 m-8 my-24">{ cryptography.description }</p>
+                        <div className="w-1/4 h-[1px] bg-gray-400"></div>
+                    </div>
                     <ArticleList 
                         articles={ articles }
                         dir="over-the-fence/cryptography"
@@ -71,7 +72,7 @@ export const getStaticProps:GetStaticProps = async() => {
         }
     }
 
-    const sortedArticles = sortByDate(articles);
+    const sortedArticles = sortByTitle(articles);
 
     return {
         props: {
