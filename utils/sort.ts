@@ -8,3 +8,11 @@ export function sortByDate(datas: mdArticleType[]):mdArticleType[] {
         return diff;
     });
 }
+
+export function sortByTitle(datas: mdArticleType[]):mdArticleType[] {
+    return datas.sort((a, b) => {
+        if (a.title > b.title) return 1;
+        if (a.title < b.title) return -1;
+        return 0;
+    })
+}
