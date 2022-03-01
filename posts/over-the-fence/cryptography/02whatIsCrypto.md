@@ -3,7 +3,7 @@ title: "02暗号とは(復習)"
 date: "2022/3/1 23:01:00"
 category: "over-the-fence"
 topics: ["暗号とは(復習)"]
-published: true
+published: false
 ---
 
 動画URL
