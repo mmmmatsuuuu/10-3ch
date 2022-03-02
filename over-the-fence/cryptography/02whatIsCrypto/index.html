@@ -1,8 +1,8 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>10-3ch | 02暗号とは(復習)</title><meta name="description" content="情報科の松村が運用するサイト"/><link rel="icon" href="/10-3ch/favicon.ico"/><meta name="next-head-count" content="5"/><link rel="preload" href="/10-3ch/_next/static/css/95048ae3b8d90c6c.css" as="style"/><link rel="stylesheet" href="/10-3ch/_next/static/css/95048ae3b8d90c6c.css" data-n-g=""/><link rel="preload" href="/10-3ch/_next/static/css/db42fdc299c3e8e4.css" as="style"/><link rel="stylesheet" href="/10-3ch/_next/static/css/db42fdc299c3e8e4.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/10-3ch/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/10-3ch/_next/static/chunks/webpack-d614ae75d18115d7.js" defer=""></script><script src="/10-3ch/_next/static/chunks/framework-91d7f78b5b4003c8.js" defer=""></script><script src="/10-3ch/_next/static/chunks/main-5dcda4c8dd3a09b2.js" defer=""></script><script src="/10-3ch/_next/static/chunks/pages/_app-ca6aae25bc99a05f.js" defer=""></script><script src="/10-3ch/_next/static/chunks/eb1842f2-5188a7515d51713b.js" defer=""></script><script src="/10-3ch/_next/static/chunks/175675d1-d82119a394f8fc4d.js" defer=""></script><script src="/10-3ch/_next/static/chunks/667-378c8588a9af1daa.js" defer=""></script><script src="/10-3ch/_next/static/chunks/866-63e8ae7f3a1c0d99.js" defer=""></script><script src="/10-3ch/_next/static/chunks/6-b3fab500963a08f6.js" defer=""></script><script src="/10-3ch/_next/static/chunks/pages/over-the-fence/cryptography/%5Bid%5D-426e609cbf935b0c.js" defer=""></script><script src="/10-3ch/_next/static/egW86qVNLJnT7L6p_1vDS/_buildManifest.js" defer=""></script><script src="/10-3ch/_next/static/egW86qVNLJnT7L6p_1vDS/_ssgManifest.js" defer=""></script><script src="/10-3ch/_next/static/egW86qVNLJnT7L6p_1vDS/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><div class="relative w-screen h-screen"><header class="fixed top-0 w-screen h-[64px] z-50 bg-gradient-to-r from-green-400 to-sky-400"><div class="bg-white h-[60px]"><div class="max-w-screen-xl h-full m-auto flex justify-between items-center"><a href="/10-3ch/" class="rounded-full bg-gradient-to-r from-green-400 to-sky-400"><img src="/10-3ch/logo.svg" alt="icon" width="50px"/></a><ul class="flex justify-center items-center font-bold"><li class="m-2"><a class="grad-hover" href="/10-3ch/crunch-time/">Crunch Time</a></li><li class="m-2"><a class="grad-hover" href="/10-3ch/my-recommend/">My Recommend</a></li><li class="m-2"><a class="text-gray-400" href="/10-3ch/over-the-fence/">Over The Fence</a></li></ul></div></div></header><div class="fixed top-16 w-screen h-[calc(100vh-3rem)] overflow-x-hidden"><main><div class="max-w-screen-xl h-full m-auto grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 py-4"><div class="md:col-span-2 xl:col-span-3 bg-white rounded p-1 md:p-4 xl:px-8 article-body"><div><h2 class="
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><title>10-3ch | 02暗号とは</title><meta name="description" content="情報科の松村が運用するサイト"/><link rel="icon" href="/10-3ch/favicon.ico"/><meta name="next-head-count" content="5"/><link rel="preload" href="/10-3ch/_next/static/css/95048ae3b8d90c6c.css" as="style"/><link rel="stylesheet" href="/10-3ch/_next/static/css/95048ae3b8d90c6c.css" data-n-g=""/><link rel="preload" href="/10-3ch/_next/static/css/db42fdc299c3e8e4.css" as="style"/><link rel="stylesheet" href="/10-3ch/_next/static/css/db42fdc299c3e8e4.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/10-3ch/_next/static/chunks/polyfills-5cd94c89d3acac5f.js"></script><script src="/10-3ch/_next/static/chunks/webpack-d614ae75d18115d7.js" defer=""></script><script src="/10-3ch/_next/static/chunks/framework-91d7f78b5b4003c8.js" defer=""></script><script src="/10-3ch/_next/static/chunks/main-5dcda4c8dd3a09b2.js" defer=""></script><script src="/10-3ch/_next/static/chunks/pages/_app-ca6aae25bc99a05f.js" defer=""></script><script src="/10-3ch/_next/static/chunks/eb1842f2-5188a7515d51713b.js" defer=""></script><script src="/10-3ch/_next/static/chunks/175675d1-d82119a394f8fc4d.js" defer=""></script><script src="/10-3ch/_next/static/chunks/667-378c8588a9af1daa.js" defer=""></script><script src="/10-3ch/_next/static/chunks/866-63e8ae7f3a1c0d99.js" defer=""></script><script src="/10-3ch/_next/static/chunks/6-b3fab500963a08f6.js" defer=""></script><script src="/10-3ch/_next/static/chunks/pages/over-the-fence/cryptography/%5Bid%5D-426e609cbf935b0c.js" defer=""></script><script src="/10-3ch/_next/static/9zeHQvkvNEsiPGIn9gjaU/_buildManifest.js" defer=""></script><script src="/10-3ch/_next/static/9zeHQvkvNEsiPGIn9gjaU/_ssgManifest.js" defer=""></script><script src="/10-3ch/_next/static/9zeHQvkvNEsiPGIn9gjaU/_middlewareManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><div class="relative w-screen h-screen"><header class="fixed top-0 w-screen h-[64px] z-50 bg-gradient-to-r from-green-400 to-sky-400"><div class="bg-white h-[60px]"><div class="max-w-screen-xl h-full m-auto flex justify-between items-center"><a href="/10-3ch/" class="rounded-full bg-gradient-to-r from-green-400 to-sky-400"><img src="/10-3ch/logo.svg" alt="icon" width="50px"/></a><ul class="flex justify-center items-center font-bold"><li class="m-2"><a class="grad-hover" href="/10-3ch/crunch-time/">Crunch Time</a></li><li class="m-2"><a class="grad-hover" href="/10-3ch/my-recommend/">My Recommend</a></li><li class="m-2"><a class="text-gray-400" href="/10-3ch/over-the-fence/">Over The Fence</a></li></ul></div></div></header><div class="fixed top-16 w-screen h-[calc(100vh-3rem)] overflow-x-hidden"><main><div class="max-w-screen-xl h-full m-auto grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 py-4"><div class="md:col-span-2 xl:col-span-3 bg-white rounded p-1 md:p-4 xl:px-8 article-body"><div><h2 class="
         text-3xl font-semibold mt-4
         md:text-4xl md:font-extrabold
         xl:text-4xl
-        ">02暗号とは(復習)</h2><div class="flex justify-start items-center my-2"><div class="rounded-md bg-sky-400 text-white px-4 mr-4">更新日</div><div>2022/3/1 23:01:00</div></div><div class="
+        ">02暗号とは</h2><div class="flex justify-start items-center my-2"><div class="rounded-md bg-sky-400 text-white px-4 mr-4">更新日</div><div>2022/3/2 23:27:00</div></div><div class="
             my-4
             md:text-lg md:my-6
             ">動画URL</div>
@@ -29,7 +29,7 @@
             ">例えば、肌身離さず持っているスマートフォンには、自分の情報がいっぱいです。
 もちろん自分は、スマートフォンの中身を見られないと困りますが、他の人には見られたくありません。
 そこで、パスワードや指紋認証、顔認証などを使用して、自分以外の人には見られないようにします。
-このように、大事な情報は認められた人だけが、アクセスすることができる性質を持つ必要があります。
+このように、大切な情報は認められた人だけが、アクセスすることができる性質を持つ必要があります。
 このような性質を<strong>機密性</strong>と言います。</div>
 <h5 id="完全性" class="
         border-l-4 border-sky-400
@@ -40,7 +40,7 @@
 <div class="
             my-4
             md:text-lg md:my-6
-            ">大事な情報は、もちろん破壊されても困ります。パスワードをかけたスマートフォンは、確かに中身を見られることはないでしょう。
+            ">大切な情報は、もちろん破壊されても困ります。パスワードをかけたスマートフォンは、確かに中身を見られることはないでしょう。
 しかし、スマートフォンを壊すことで、中の情報を破壊することは可能です。
 この時に、中の情報をクラウド上にコピーしておけば、情報を破壊されることはありません。
 このように、情報が破壊、または改ざん・消去されていない状態を確保する性質を<strong>完全性</strong>と言います。</div>
@@ -55,7 +55,7 @@
             md:text-lg md:my-6
             ">クラウドにコピーをしたはいいものの、圏外で電波が届かず、情報にアクセスできなくなりました。
 今、どうしてもその情報が必要なのに困りましたね。
-大事な情報は、必要時に中断することなく、情報にアクセスできる状態を確保する必要もあり、この性質を<strong>可用性</strong>と言います。</div>
+大切な情報は、必要時に中断することなく、情報にアクセスできる状態を確保する必要もあり、この性質を<strong>可用性</strong>と言います。</div>
 <h5 id="情報セキュリティの３要素" class="
         border-l-4 border-sky-400
         text-lg font-semibold mt-2
@@ -76,12 +76,12 @@
         md:text-3xl md:font-extrabold md:p-3
         xl:text-3xl
         ">暗号技術</h3>
-<h5 id="暗号" class="
-        border-l-4 border-sky-400
-        text-lg font-semibold mt-2
-        md:text-xl md:font-extrabold
-        xl:text-xl
-        ">暗号</h5>
+<h4 id="暗号" class="
+        border-l-4 border-b-2 border-sky-400 pl-1
+        text-xl font-semibold mt-4
+        md:text-2xl md:font-extrabold
+        xl:text-2xl
+        ">暗号</h4>
 <div class="
             my-4
             md:text-lg md:my-6
@@ -92,14 +92,180 @@
             my-4
             md:text-lg md:my-6
             ">第１回の<a href="/10-3ch/over-the-fence/cryptography/01historyOfCrypto/" class="grad-hover">暗号の歴史</a>で紹介したシーザー暗号を例に見てみましょう。</div>
+<h5 id="シーザー暗号を使ったメッセージの送信" class="
+        border-l-4 border-sky-400
+        text-lg font-semibold mt-2
+        md:text-xl md:font-extrabold
+        xl:text-xl
+        ">シーザー暗号を使ったメッセージの送信</h5>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">アリスはボブに以下のメッセージを送りたいと考えています。</div>
+<pre><div class="relative code"><div class="absolute top-0 right-0 bg-amber-300 px-3 rounded">もとのメッセージ</div><pre style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;background:#2b2b2b"><code class="language-msg" style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>Hello I am Alice</span></code></pre></div></pre>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">しかし、メッセージを盗聴しようと企んでいる悪い人、イブが存在します。
+そこで、イブに盗聴されても大丈夫なように、メッセージを暗号化して、送ることにしました。
+使う暗号化の手法はシーザー暗号です。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">シーザー暗号はアルファベット順に文字をずらします。
+ここでは、アリスは３文字ずらすことにしたので、暗号にしたメッセージは次のようになります。</div>
+<pre><div class="relative code"><div class="absolute top-0 right-0 bg-amber-300 px-3 rounded">暗号化したメッセージ</div><pre style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;background:#2b2b2b"><code class="language-msg" style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>Khoor L dp Dolfh</span></code></pre></div></pre>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">もちろん、ボブには事前にこのことを、伝えています。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">このメッセージを実際にボブに送りました。
+途中、運悪くイブに盗聴されてしまいましたが、イブはメッセージを理解することができませんでした。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">一方、ボブは、事前に暗号のことを知っていたので、３文字逆にずらして、もとのメッセージに戻し、内容を知ることが出来ました。</div>
+<h5 id="暗号の世界での用語" class="
+        border-l-4 border-sky-400
+        text-lg font-semibold mt-2
+        md:text-xl md:font-extrabold
+        xl:text-xl
+        ">暗号の世界での用語</h5>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">これまでの例について、暗号の世界では、次のように名前をつけています。</div>
+<ul class="list-disc list-inside">
+<li>もとのメッセージのことを<strong>平文</strong>と言います。</li>
+<li>暗号化したメッセージのことを <strong>暗号文(または暗号)</strong> と言います。</li>
+<li>アリスがしたように、平文から暗号文にすることを<strong>暗号化</strong>と言います。</li>
+<li>ボブがしたように、暗号文を平文に戻すことを<strong>復号</strong>と言います。</li>
+<li>「アルファベット順にずらす」のように、暗号化・復号の処理の手順を<strong>暗号アルゴリズム</strong>と言います。</li>
+<li>「３文字ずらす」のように、暗号化・復号の際に用いる平文とは独立した情報のことを<strong>鍵</strong>と言います。</li>
+</ul>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">シーザー暗号では、「１文字ずらす」から「２６文字ずらす」の２６種類の鍵が存在します。
+つまり、イブは少し面倒ですが、「１文字ずらす」から「２６文字ずらす」の２６通りを試せば、もとのメッセージを知ることができます。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">第１回の<a href="/10-3ch/over-the-fence/cryptography/01historyOfCrypto/" class="grad-hover">暗号の歴史</a>のエニグマのところでも話ましたが、現在の暗号の考え方では、暗号アルゴリズムを隠しておくことは、得策とはされていません。
+なぜなら、隠しておけないからです。隠しておけるならば、そもそも暗号は要りませんよね。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">今回は２６通り試せば、暗号を突破出来ます。これが、１０００通りや１００００通り試さなければいけないとなると、イブは途中で諦めてしまうかもしれません。
+つまり、使える鍵の種類が、その暗号の強さになります。鍵の種類が多いと、それだけ試さなければいけないパターンも多くなります。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">鍵の種類は、鍵の長さに比例します。
+ここでいう鍵の長さとは、桁数のことです。シーザー暗号は最大で「２６文字ずらす」の２桁ですね。
+コンピュータの世界では、ビットを使って物事を表すので、ビットの桁数が鍵の長さになります。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">暗号の世界では、次のように名前をつけています。</div>
+<ul class="list-disc list-inside">
+<li>使用できる鍵の種類の多さのことを<strong>鍵空間</strong>と言います。</li>
+<li>ビットの桁数などの、鍵の長さのことを<strong>鍵長</strong>と言います。</li>
+</ul>
 <div class="
             my-4
             md:text-lg md:my-6
             ">ここで、用語について整理しておきましょう。</div>
 <table><thead><tr><th class="border border-gray-400 bg-gray-100 px-4 py-1">用語</th><th class="border border-gray-400 bg-gray-100 px-4 py-1">意味</th></tr></thead><tbody><tr><td class="border border-gray-400 bg-white text-left p-1">平文</td><td class="border border-gray-400 bg-white text-left p-1">もとの情報</td></tr><tr><td class="border border-gray-400 bg-white text-left p-1">暗号(暗号文)</td><td class="border border-gray-400 bg-white text-left p-1">第三者が見てもわからないように変換したもの</td></tr><tr><td class="border border-gray-400 bg-white text-left p-1">暗号化</td><td class="border border-gray-400 bg-white text-left p-1">平文から暗号へ変換すること</td></tr><tr><td class="border border-gray-400 bg-white text-left p-1">復号</td><td class="border border-gray-400 bg-white text-left p-1">暗号から平文に戻すこと</td></tr><tr><td class="border border-gray-400 bg-white text-left p-1">暗号アルゴリズム</td><td class="border border-gray-400 bg-white text-left p-1">暗号化や復号の処理を行う際の手順</td></tr><tr><td class="border border-gray-400 bg-white text-left p-1">鍵</td><td class="border border-gray-400 bg-white text-left p-1">暗号化や復号の際に用いる平文とは独立した情報</td></tr><tr><td class="border border-gray-400 bg-white text-left p-1">鍵空間</td><td class="border border-gray-400 bg-white text-left p-1">使用できる鍵の種類の多さ</td></tr><tr><td class="border border-gray-400 bg-white text-left p-1">鍵長</td><td class="border border-gray-400 bg-white text-left p-1">鍵の長さ。一般にビット(bit)で表す。</td></tr></tbody></table>
-<h3 id="情報セキュリティと暗号技術の関係" class="
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">これらは、シーザー暗号に限らず、色々な暗号の手法に共通しているので、用語として名前がついています。</div>
+<h4 id="ハッシュ関数" class="
+        border-l-4 border-b-2 border-sky-400 pl-1
+        text-xl font-semibold mt-4
+        md:text-2xl md:font-extrabold
+        xl:text-2xl
+        ">ハッシュ関数</h4>
+<h5 id="ハッシュ関数とは" class="
+        border-l-4 border-sky-400
+        text-lg font-semibold mt-2
+        md:text-xl md:font-extrabold
+        xl:text-xl
+        ">ハッシュ関数とは</h5>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">少し変わった暗号技術にハッシュ関数というものがあります。
+ハッシュ関数とは、任意の長さのメッセージから、決まった長さのデータを生成する関数です。
+生成されたデータを<strong>ハッシュ値</strong>と呼びます。</div>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">次の例は、メッセージからハッシュ値を生成したものです。</div>
+<pre><div class="relative code"><div class="absolute top-0 right-0 bg-amber-300 px-3 rounded">MD5</div><pre style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;background:#2b2b2b"><code class="language-msg" style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>もとのメッセージ　　: Hello I am Alice
+</span>生成されたハッシュ値: c66660942e5eeaa6de5013cb3e286daf
+</code></pre></div></pre>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">ハッシュ関数は、次のような特徴があります。</div>
+<ul class="list-disc list-inside">
+<li>もとのデータとハッシュ値の間に規則性がない。</li>
+<li>異なるメッセージからは、異なるハッシュ値が生成される。</li>
+<li>ハッシュ値からもとのデータを効率よく求めることが出来ない。</li>
+<li>同じハッシュ値になるもとのデータを容易に見つけることが出来ない。</li>
+</ul>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">これらの特徴から、メッセージが改ざんされているかを、確認するのに利用されています。</div>
+<h5 id="ハッシュ関数を使った改ざんの防止" class="
+        border-l-4 border-sky-400
+        text-lg font-semibold mt-2
+        md:text-xl md:font-extrabold
+        xl:text-xl
+        ">ハッシュ関数を使った改ざんの防止</h5>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">例えば、AliceからBobに次のようにメッセージと生成したハッシュ値を送信するとしましょう。
+ハッシュ値は、事前にBobと打ち合わせた鍵で暗号化して送ります。</div>
+<pre><div class="relative code"><div class="absolute top-0 right-0 bg-amber-300 px-3 rounded">AliceからBobに送られるメッセージ</div><pre style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;background:#2b2b2b"><code class="language-msg" style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>もとのメッセージ　: Hello I am Alice
+</span>生成したハッシュ値: c66660942e5eeaa6de5013cb3e286daf
+</code></pre></div></pre>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">途中イブが、次のようにメッセージを改ざんします。</div>
+<pre><div class="relative code"><div class="absolute top-0 right-0 bg-amber-300 px-3 rounded">改ざんされたメッセージ</div><pre style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;background:#2b2b2b"><code class="language-msg" style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>改ざんされたメッセージ: I hate you</span></code></pre></div></pre>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">ボブは、イブが改ざんしたメッセージを受け取ることになります。
+ボブは、鍵を使って暗号化されたハッシュ値を復号します。</div>
+<pre><div class="relative code"><div class="absolute top-0 right-0 bg-amber-300 px-3 rounded"></div><pre style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;background:#2b2b2b"><code style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>ハッシュ値: c66660942e5eeaa6de5013cb3e286daf</span></code></pre></div></pre>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">また、送られてきたメッセージから、ハッシュ関数を使用して、ハッシュ値を求めます。</div>
+<pre><div class="relative code"><div class="absolute top-0 right-0 bg-amber-300 px-3 rounded"></div><pre style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;background:#2b2b2b"><code style="color:#a9b7c6;font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>ハッシュ値: d2ec37d88bcbc82daf652c2a0a50d123</span></code></pre></div></pre>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">もちろん、改ざんされたもとのメッセージと異なるメッセージからハッシュ値を求めるので、復号したハッシュ値とは異なるものになります。
+よって、改ざんされていることが、わかります。
+もとのハッシュ値は暗号化されているので、イブは、もとのハッシュ値を知ることが出来ません。よって、ハッシュ値自体を改ざんすることも不可能です。</div>
+<h3 id="終わりに" class="
          bg-sky-50 border-l-8 border-b-4 border-sky-400
         text-2xl font-semibold mt-6 p-2
         md:text-3xl md:font-extrabold md:p-3
         xl:text-3xl
-        ">情報セキュリティと暗号技術の関係</h3></div></div><div class="hidden md:block h-full md:col-span-1"><div class="sticky top-4"><p class="font-bold p-2 mb-2 border-b-2 border-sky-400">目次</p><nav class="h-80 overflow-y-scroll toc"></nav></div></div></div></main><footer><div class="max-w-screen-xl m-auto bg-gradient-to-r from-green-400 to-sky-400 pt-[1px]"><div class="bg-white grid grid-cols-1 md:grid-cols-3 p-2"><div class="md:col-span-2 flex"><img src="/10-3ch/logo_small.svg" alt="logo" class="md:px-8 w-16 md:w-32"/><div><table class="text-gray-400"><tbody><tr><td class="pr-4">管理者</td><td>松村</td></tr><tr><td class="pr-4">職業</td><td>県立の高校で情報を担当</td></tr></tbody></table></div></div><div class="hidden md:block"></div></div><div class="bg-white text-center text-gray-400 mb-4">copyright © 2022 10.3ch All Rights Reserved.</div></div></footer></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"filename":"02whatIsCrypto","title":"02暗号とは(復習)","topics":["暗号とは(復習)"],"article":"\n動画URL\n\n# 情報セキュリティ\n\n私たちが、コンピュータやインターネットを、安心して利用するためには、情報の盗聴や、改ざん、破壊などの不正行為や不慮の事故に対応し、情報を常に安全な状態にしておく必要があります。\n情報が安全な状態とは、どのような状態でしょうか。もう少し一般化して考えてみましょう。\n\n### 機密性\n例えば、肌身離さず持っているスマートフォンには、自分の情報がいっぱいです。\nもちろん自分は、スマートフォンの中身を見られないと困りますが、他の人には見られたくありません。\nそこで、パスワードや指紋認証、顔認証などを使用して、自分以外の人には見られないようにします。\nこのように、大事な情報は認められた人だけが、アクセスすることができる性質を持つ必要があります。\nこのような性質を**機密性**と言います。\n\n### 完全性\n大事な情報は、もちろん破壊されても困ります。パスワードをかけたスマートフォンは、確かに中身を見られることはないでしょう。\nしかし、スマートフォンを壊すことで、中の情報を破壊することは可能です。\nこの時に、中の情報をクラウド上にコピーしておけば、情報を破壊されることはありません。\nこのように、情報が破壊、または改ざん・消去されていない状態を確保する性質を**完全性**と言います。\n\n### 可用性\nクラウドにコピーをしたはいいものの、圏外で電波が届かず、情報にアクセスできなくなりました。\n今、どうしてもその情報が必要なのに困りましたね。\n大事な情報は、必要時に中断することなく、情報にアクセスできる状態を確保する必要もあり、この性質を**可用性**と言います。\n\n### 情報セキュリティの３要素\nここまでに紹介した、機密性・完全性・可用性の３つの性質を確保することを**情報セキュリティ**と言います。\n\n暗号は、この情報セキュリティを守るために、存在します。\n\n# 暗号技術\n\n### 暗号\n特定の相手だけに、情報を伝えたい場合、その相手だけが読める形にして、情報を送ることが一番確実です。\n送っている途中で、誰かに見られても読めないからです。\nこの、特定の相手だけに読める形にしたものが、**暗号**になります。\n\n第１回の[暗号の歴史](/over-the-fence/cryptography/01historyOfCrypto/)で紹介したシーザー暗号を例に見てみましょう。\n\n\nここで、用語について整理しておきましょう。\n\n|用語|意味|\n|----|----|\n|平文|もとの情報|\n|暗号(暗号文)|第三者が見てもわからないように変換したもの|\n|暗号化|平文から暗号へ変換すること|\n|復号|暗号から平文に戻すこと|\n|暗号アルゴリズム|暗号化や復号の処理を行う際の手順|\n|鍵|暗号化や復号の際に用いる平文とは独立した情報|\n|鍵空間|使用できる鍵の種類の多さ|\n|鍵長|鍵の長さ。一般にビット(bit)で表す。|\n\n# 情報セキュリティと暗号技術の関係","date":"2022/3/1 23:01:00","category":"over-the-fence","published":false}},"__N_SSG":true},"page":"/over-the-fence/cryptography/[id]","query":{"id":"02whatIsCrypto"},"buildId":"egW86qVNLJnT7L6p_1vDS","assetPrefix":"/10-3ch","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
+        ">終わりに</h3>
+<div class="
+            my-4
+            md:text-lg md:my-6
+            ">このように、暗号で機密性を、ハッシュ関数で完全性を、といったふうに暗号技術は、情報セキュリティを実現するために大切な技術になります。</div></div></div><div class="hidden md:block h-full md:col-span-1"><div class="sticky top-4"><p class="font-bold p-2 mb-2 border-b-2 border-sky-400">目次</p><nav class="h-80 overflow-y-scroll toc"></nav></div></div></div></main><footer><div class="max-w-screen-xl m-auto bg-gradient-to-r from-green-400 to-sky-400 pt-[1px]"><div class="bg-white grid grid-cols-1 md:grid-cols-3 p-2"><div class="md:col-span-2 flex"><img src="/10-3ch/logo_small.svg" alt="logo" class="md:px-8 w-16 md:w-32"/><div><table class="text-gray-400"><tbody><tr><td class="pr-4">管理者</td><td>松村</td></tr><tr><td class="pr-4">職業</td><td>県立の高校で情報を担当</td></tr></tbody></table></div></div><div class="hidden md:block"></div></div><div class="bg-white text-center text-gray-400 mb-4">copyright © 2022 10.3ch All Rights Reserved.</div></div></footer></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"filename":"02whatIsCrypto","title":"02暗号とは","topics":["暗号とは(復習)"],"article":"\n動画URL\n\n# 情報セキュリティ\n\n私たちが、コンピュータやインターネットを、安心して利用するためには、情報の盗聴や、改ざん、破壊などの不正行為や不慮の事故に対応し、情報を常に安全な状態にしておく必要があります。\n情報が安全な状態とは、どのような状態でしょうか。もう少し一般化して考えてみましょう。\n\n### 機密性\n例えば、肌身離さず持っているスマートフォンには、自分の情報がいっぱいです。\nもちろん自分は、スマートフォンの中身を見られないと困りますが、他の人には見られたくありません。\nそこで、パスワードや指紋認証、顔認証などを使用して、自分以外の人には見られないようにします。\nこのように、大切な情報は認められた人だけが、アクセスすることができる性質を持つ必要があります。\nこのような性質を**機密性**と言います。\n\n### 完全性\n大切な情報は、もちろん破壊されても困ります。パスワードをかけたスマートフォンは、確かに中身を見られることはないでしょう。\nしかし、スマートフォンを壊すことで、中の情報を破壊することは可能です。\nこの時に、中の情報をクラウド上にコピーしておけば、情報を破壊されることはありません。\nこのように、情報が破壊、または改ざん・消去されていない状態を確保する性質を**完全性**と言います。\n\n### 可用性\nクラウドにコピーをしたはいいものの、圏外で電波が届かず、情報にアクセスできなくなりました。\n今、どうしてもその情報が必要なのに困りましたね。\n大切な情報は、必要時に中断することなく、情報にアクセスできる状態を確保する必要もあり、この性質を**可用性**と言います。\n\n### 情報セキュリティの３要素\nここまでに紹介した、機密性・完全性・可用性の３つの性質を確保することを**情報セキュリティ**と言います。\n\n暗号は、この情報セキュリティを守るために、存在します。\n\n# 暗号技術\n\n## 暗号\n特定の相手だけに、情報を伝えたい場合、その相手だけが読める形にして、情報を送ることが一番確実です。\n送っている途中で、誰かに見られても読めないからです。\nこの、特定の相手だけに読める形にしたものが、**暗号**になります。\n\n第１回の[暗号の歴史](/over-the-fence/cryptography/01historyOfCrypto/)で紹介したシーザー暗号を例に見てみましょう。\n\n\n### シーザー暗号を使ったメッセージの送信\nアリスはボブに以下のメッセージを送りたいと考えています。\n\n```msg:もとのメッセージ\nHello I am Alice\n```\n\nしかし、メッセージを盗聴しようと企んでいる悪い人、イブが存在します。\nそこで、イブに盗聴されても大丈夫なように、メッセージを暗号化して、送ることにしました。\n使う暗号化の手法はシーザー暗号です。\n\nシーザー暗号はアルファベット順に文字をずらします。\nここでは、アリスは３文字ずらすことにしたので、暗号にしたメッセージは次のようになります。\n\n```msg:暗号化したメッセージ\nKhoor L dp Dolfh\n```\n\nもちろん、ボブには事前にこのことを、伝えています。\n\nこのメッセージを実際にボブに送りました。\n途中、運悪くイブに盗聴されてしまいましたが、イブはメッセージを理解することができませんでした。\n\n一方、ボブは、事前に暗号のことを知っていたので、３文字逆にずらして、もとのメッセージに戻し、内容を知ることが出来ました。\n\n### 暗号の世界での用語\nこれまでの例について、暗号の世界では、次のように名前をつけています。\n\n- もとのメッセージのことを**平文**と言います。\n- 暗号化したメッセージのことを **暗号文\\(または暗号\\)** と言います。\n- アリスがしたように、平文から暗号文にすることを**暗号化**と言います。\n- ボブがしたように、暗号文を平文に戻すことを**復号**と言います。\n- 「アルファベット順にずらす」のように、暗号化・復号の処理の手順を**暗号アルゴリズム**と言います。\n- 「３文字ずらす」のように、暗号化・復号の際に用いる平文とは独立した情報のことを**鍵**と言います。\n\nシーザー暗号では、「１文字ずらす」から「２６文字ずらす」の２６種類の鍵が存在します。\nつまり、イブは少し面倒ですが、「１文字ずらす」から「２６文字ずらす」の２６通りを試せば、もとのメッセージを知ることができます。\n\n第１回の[暗号の歴史](/over-the-fence/cryptography/01historyOfCrypto/)のエニグマのところでも話ましたが、現在の暗号の考え方では、暗号アルゴリズムを隠しておくことは、得策とはされていません。\nなぜなら、隠しておけないからです。隠しておけるならば、そもそも暗号は要りませんよね。\n\n今回は２６通り試せば、暗号を突破出来ます。これが、１０００通りや１００００通り試さなければいけないとなると、イブは途中で諦めてしまうかもしれません。\nつまり、使える鍵の種類が、その暗号の強さになります。鍵の種類が多いと、それだけ試さなければいけないパターンも多くなります。\n\n鍵の種類は、鍵の長さに比例します。\nここでいう鍵の長さとは、桁数のことです。シーザー暗号は最大で「２６文字ずらす」の２桁ですね。\nコンピュータの世界では、ビットを使って物事を表すので、ビットの桁数が鍵の長さになります。\n\n暗号の世界では、次のように名前をつけています。\n\n- 使用できる鍵の種類の多さのことを**鍵空間**と言います。\n- ビットの桁数などの、鍵の長さのことを**鍵長**と言います。\n\nここで、用語について整理しておきましょう。\n\n|用語|意味|\n|----|----|\n|平文|もとの情報|\n|暗号(暗号文)|第三者が見てもわからないように変換したもの|\n|暗号化|平文から暗号へ変換すること|\n|復号|暗号から平文に戻すこと|\n|暗号アルゴリズム|暗号化や復号の処理を行う際の手順|\n|鍵|暗号化や復号の際に用いる平文とは独立した情報|\n|鍵空間|使用できる鍵の種類の多さ|\n|鍵長|鍵の長さ。一般にビット(bit)で表す。|\n\nこれらは、シーザー暗号に限らず、色々な暗号の手法に共通しているので、用語として名前がついています。\n\n## ハッシュ関数\n\n### ハッシュ関数とは\n少し変わった暗号技術にハッシュ関数というものがあります。\nハッシュ関数とは、任意の長さのメッセージから、決まった長さのデータを生成する関数です。\n生成されたデータを**ハッシュ値**と呼びます。\n\n次の例は、メッセージからハッシュ値を生成したものです。\n\n```msg:MD5\nもとのメッセージ　　: Hello I am Alice\n生成されたハッシュ値: c66660942e5eeaa6de5013cb3e286daf\n```\n\nハッシュ関数は、次のような特徴があります。\n\n- もとのデータとハッシュ値の間に規則性がない。\n- 異なるメッセージからは、異なるハッシュ値が生成される。\n- ハッシュ値からもとのデータを効率よく求めることが出来ない。\n- 同じハッシュ値になるもとのデータを容易に見つけることが出来ない。\n\nこれらの特徴から、メッセージが改ざんされているかを、確認するのに利用されています。\n\n### ハッシュ関数を使った改ざんの防止\n例えば、AliceからBobに次のようにメッセージと生成したハッシュ値を送信するとしましょう。\nハッシュ値は、事前にBobと打ち合わせた鍵で暗号化して送ります。\n\n```msg:AliceからBobに送られるメッセージ\nもとのメッセージ　: Hello I am Alice\n生成したハッシュ値: c66660942e5eeaa6de5013cb3e286daf\n```\n\n途中イブが、次のようにメッセージを改ざんします。\n\n```msg:改ざんされたメッセージ\n改ざんされたメッセージ: I hate you\n```\n\nボブは、イブが改ざんしたメッセージを受け取ることになります。\nボブは、鍵を使って暗号化されたハッシュ値を復号します。\n\n```\nハッシュ値: c66660942e5eeaa6de5013cb3e286daf\n```\n\nまた、送られてきたメッセージから、ハッシュ関数を使用して、ハッシュ値を求めます。\n\n```\nハッシュ値: d2ec37d88bcbc82daf652c2a0a50d123\n```\n\nもちろん、改ざんされたもとのメッセージと異なるメッセージからハッシュ値を求めるので、復号したハッシュ値とは異なるものになります。\nよって、改ざんされていることが、わかります。\nもとのハッシュ値は暗号化されているので、イブは、もとのハッシュ値を知ることが出来ません。よって、ハッシュ値自体を改ざんすることも不可能です。\n\n# 終わりに\n\nこのように、暗号で機密性を、ハッシュ関数で完全性を、といったふうに暗号技術は、情報セキュリティを実現するために大切な技術になります。","date":"2022/3/2 23:27:00","category":"over-the-fence","published":false}},"__N_SSG":true},"page":"/over-the-fence/cryptography/[id]","query":{"id":"02whatIsCrypto"},"buildId":"9zeHQvkvNEsiPGIn9gjaU","assetPrefix":"/10-3ch","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
