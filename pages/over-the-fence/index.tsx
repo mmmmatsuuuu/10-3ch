@@ -1,7 +1,8 @@
 import { NextPage } from "next";
 import Layout from '../../components/layout';
-import { OverTheFenceCard, OverTheFenceProps } from "../../components/common/card";
+import { OverTheFenceCard } from "../../components/common/card";
 import { cryptography } from "./cryptography/index";
+import { webpage } from "./webpage";
 
 const OverTheFence:NextPage = () => {
     return (
@@ -16,14 +17,23 @@ const OverTheFence:NextPage = () => {
                     <p className="mb-24">
                     フェンスを飛び越えて授業では扱えなかったちょっと高度な内容にアクセスしてみよう。
                     </p>
-                    <div className="flex flex-wrap">
-                        <div className="basis-full md:basis-1/2 xl:basis-1/3">
+                    <div className="">
+                        <div className="w-full md:w-2/3 hover:w-full transition-all duration-500">
                             <OverTheFenceCard
                                 title={ cryptography.title }
                                 description={ cryptography.description }
                                 image={ cryptography.image }
                                 href={ cryptography.href }
                                 contents={ cryptography.contents }
+                            />
+                        </div>
+                        <div className="w-full md:w-2/3 hover:w-full transition-all duration-500">
+                            <OverTheFenceCard
+                                title={ webpage.title }
+                                description={ webpage.description }
+                                image={ webpage.image }
+                                href={ webpage.href }
+                                contents={ webpage.contents }
                             />
                         </div>
                     </div>

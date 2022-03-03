@@ -50,7 +50,7 @@ const Article: NextPage<articleProps> = ({ postData }) => {
 
 export const getStaticPaths:GetStaticPaths = async() => {
     // ファイル名一覧を取得
-    const paths = getPostIds(["posts", "over-the-fence", "cryptography"]);
+    const paths = getPostIds(["posts", "over-the-fence", "webpage"]);
     return {
         paths,
         fallback: false
@@ -62,7 +62,7 @@ export const getStaticProps:GetStaticProps = async({ params }) => {
     const path: string = params ? params.id as string : "";
 
     // 該当するファイルパスのマークダウンファイルの取得
-    const postData = getPostData(["posts", "over-the-fence", "cryptography"], path);
+    const postData = getPostData(["posts", "over-the-fence", "webpage"], path);
 
     return {
         props: {
