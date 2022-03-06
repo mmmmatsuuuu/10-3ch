@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Link from "next/link";
 
 export type OverTheFenceProps = {
@@ -13,35 +12,24 @@ export type OverTheFenceProps = {
 }
 
 export const OverTheFenceCard:React.FC<OverTheFenceProps> = ({
-    title, description, image, href, contents
+    title, image, href
 }) => {
-    const [show, setShow] = useState("hidden");
 
     return (
-        <Link
-            href={ href }
-        >
-            <a 
-                className="block border border-sky-400 rounded-lg m-1 overflow-hidden hover:shadow-md"
-                onMouseOver={() => setShow("block")}
-                onMouseLeave={() => setShow("hidden")}
+            <div 
+                className="block border border-sky-400 rounded-lg m-1 p-2 overflow-hidden"
             >
-                <img src={ image.src } alt={ image.alt } className="m-auto" />
                 <div className="p-2">
                     <h3 className="text-xl font-bold border-b border-sky-200">{ title }</h3>
-                    <p className="py-2 text-gray-600">{ description }</p>
-                    <div className={ `flex flex-col items-center ${show}` }>
-                        <p className="font-bold text-gray-600">--- コンテンツ ---</p>
-                        <ul className="list-disc list-inside text-gray-600 m-0">
-                            { contents.map(c => {
-                                return (
-                                    <li key={ c }>{ c }</li>
-                                )
-                            })}
-                        </ul>
-                    </div>
+                    <img src={ image.src } alt={ image.alt } className="m-auto h-64" />
                 </div>
-            </a>
-        </Link>
+                <div className="p-4 w-full">
+                    <Link href={ href }>
+                        <a className="block w-full border border-sky-400 text-black hover:bg-gradient-to-r hover:from-green-400 hover:to-sky-400 shadow-md hover:text-white text-center p-4 px-8 rounded-md">
+                            開く
+                        </a>
+                    </Link>
+                </div>
+            </div>
     )
 }

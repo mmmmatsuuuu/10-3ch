@@ -1,28 +1,15 @@
-import { useEffect } from 'react';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import tocbot from 'tocbot';
 import Layout from '../../../components/layout';
 import { getPostIds, getPostData } from '../../../utils/posts';
 import { ArticleComponent } from '../../../components/md/article';
 import { TableOfContents } from '../../../components/sidebar/tableOfContents';
-import { CrunchTimeNav } from '../../../components/sidebar/sideMenu';
 import { mdArticleType } from "../../../components/md/article";
 
 type articleProps = {
     postData: mdArticleType;
 }
 
-const CrunchTimeArticle: NextPage<articleProps> = ({ postData }) => {
-
-    useEffect(() => {
-        tocbot.init({
-            tocSelector: '.toc',
-            contentSelector: '.article-body',
-            headingSelector: 'h3',
-        })
-    
-        return () => tocbot.destroy()
-    }, []);
+const Article: NextPage<articleProps> = ({ postData }) => {
 
     return (
         <Layout
@@ -39,9 +26,7 @@ const CrunchTimeArticle: NextPage<articleProps> = ({ postData }) => {
                 <div className='hidden md:block h-full md:col-span-1'>
                     <div className='sticky top-4'>
                         <p className="font-bold p-2 mb-2 border-b-2 border-sky-400">目次</p>
-                        <TableOfContents
-                            clsName='toc'
-                        />
+                        <TableOfContents />
                     </div>
                 </div>
             </div>
@@ -72,4 +57,4 @@ export const getStaticProps:GetStaticProps = async({ params }) => {
     }
 }
 
-export default CrunchTimeArticle;
+export default Article;

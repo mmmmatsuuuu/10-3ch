@@ -1,16 +1,17 @@
+import { useEffect } from 'react';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import Layout from '../../components/layout';
-import { getPostIds, getPostData } from '../../utils/posts';
-import { ArticleComponent } from '../../components/md/article';
-import { TableOfContents } from '../../components/sidebar/tableOfContents';
-import { CrunchTimeNav } from '../../components/sidebar/sideMenu';
-import { mdArticleType } from "../../components/md/article";
+import tocbot from 'tocbot';
+import Layout from '../../../components/layout';
+import { getPostIds, getPostData } from '../../../utils/posts';
+import { ArticleComponent } from '../../../components/md/article';
+import { TableOfContents } from '../../../components/sidebar/tableOfContents';
+import { mdArticleType } from "../../../components/md/article";
 
 type articleProps = {
     postData: mdArticleType;
 }
 
-const CrunchTimeArticle: NextPage<articleProps> = ({ postData }) => {
+const Article: NextPage<articleProps> = ({ postData }) => {
 
     return (
         <Layout
@@ -25,10 +26,6 @@ const CrunchTimeArticle: NextPage<articleProps> = ({ postData }) => {
                     />
                 </div>
                 <div className='hidden md:block h-full md:col-span-1'>
-                    <div className='mb-12'>
-                        <p className="font-bold p-2 mb-2 border-b-2 border-sky-400">コンテンツ</p>
-                        <CrunchTimeNav />
-                    </div>
                     <div className='sticky top-4'>
                         <p className="font-bold p-2 mb-2 border-b-2 border-sky-400">目次</p>
                         <TableOfContents />
@@ -41,7 +38,7 @@ const CrunchTimeArticle: NextPage<articleProps> = ({ postData }) => {
 
 export const getStaticPaths:GetStaticPaths = async() => {
     // ファイル名一覧を取得
-    const paths = getPostIds(["posts", "crunch-time"]);
+    const paths = getPostIds(["posts", "over-the-fence", "spreadsheet"]);
     return {
         paths,
         fallback: false
@@ -53,7 +50,7 @@ export const getStaticProps:GetStaticProps = async({ params }) => {
     const path: string = params ? params.id as string : "";
 
     // 該当するファイルパスのマークダウンファイルの取得
-    const postData = getPostData(["posts", "crunch-time"], path);
+    const postData = getPostData(["posts", "over-the-fence", "spreadsheet"], path);
 
     return {
         props: {
@@ -62,4 +59,4 @@ export const getStaticProps:GetStaticProps = async({ params }) => {
     }
 }
 
-export default CrunchTimeArticle;
+export default Article;

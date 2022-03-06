@@ -36,8 +36,9 @@ export const MarkdownLink: React.FC = ({
 
     if (href.indexOf("https://www.youtube.com/") == 0) {
         // youtube link
-        const videoId = href.split("?v=")[1];
-        return <YoutubeLink videoId={ videoId } />
+        return <BasicLink href={ href }>
+            { children }
+        </BasicLink>
 
     } else if (href.indexOf("https://youtu.be/") == 0) {
         // youtube link
