@@ -39,7 +39,7 @@ const OverTheFence:NextPage = () => {
                                     <ul className="m-0">
                                     { show.contents.map(c => {
                                         return (
-                                            <li>{ c }</li>
+                                            <li key={c}>{ c }</li>
                                         );
                                     })}
                                     </ul>
