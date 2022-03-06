@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Link from "next/link";
 
 export type OverTheFenceProps = {
@@ -13,37 +12,24 @@ export type OverTheFenceProps = {
 }
 
 export const OverTheFenceCard:React.FC<OverTheFenceProps> = ({
-    title, description, image, href, contents
+    title, image, href
 }) => {
-    const [show, setShow] = useState("hidden w-0");
 
     return (
-        <Link
-            href={ href }
-        >
-            <a 
-                className="grid grid-cols-1 hover:grid-cols-2 border border-sky-400 rounded-lg m-1 overflow-hidden hover:shadow-md"
-                onMouseOver={() => setShow("block w-full")}
-                onMouseLeave={() => setShow("hidden w-0")}
+            <div 
+                className="block border border-sky-400 rounded-lg m-1 p-2 overflow-hidden"
             >
                 <div className="p-2">
                     <h3 className="text-xl font-bold border-b border-sky-200">{ title }</h3>
-                    <img src={ image.src } alt={ image.alt } className="m-auto w-80" />
+                    <img src={ image.src } alt={ image.alt } className="m-auto h-64" />
                 </div>
-                <div className={ `flex flex-col items-center ${show}` }>
-                    <div className="p-2">
-                        <p className="py-2 text-gray-600">{ description }</p>
-                    </div>
-                    <p className="font-bold text-gray-600">--- コンテンツ ---</p>
-                    <ul className="list-disc list-inside text-gray-600 m-0 h-32 overflow-y-auto">
-                        { contents.map(c => {
-                            return (
-                                <li key={ c }>{ c }</li>
-                            )
-                        })}
-                    </ul>
+                <div className="p-4 w-full">
+                    <Link href={ href }>
+                        <a className="block w-full border border-sky-400 text-black hover:bg-gradient-to-r hover:from-green-400 hover:to-sky-400 shadow-md hover:text-white text-center p-4 px-8 rounded-md">
+                            開く
+                        </a>
+                    </Link>
                 </div>
-            </a>
-        </Link>
+            </div>
     )
 }

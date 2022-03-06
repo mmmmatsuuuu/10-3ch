@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import tocbot from 'tocbot';
 import Layout from '../../../components/layout';
 import { getPostIds, getPostData } from '../../../utils/posts';
 import { ArticleComponent } from '../../../components/md/article';
@@ -36,7 +38,7 @@ const Article: NextPage<articleProps> = ({ postData }) => {
 
 export const getStaticPaths:GetStaticPaths = async() => {
     // ファイル名一覧を取得
-    const paths = getPostIds(["posts", "over-the-fence", "webpage"]);
+    const paths = getPostIds(["posts", "over-the-fence", "spreadsheet"]);
     return {
         paths,
         fallback: false
@@ -48,7 +50,7 @@ export const getStaticProps:GetStaticProps = async({ params }) => {
     const path: string = params ? params.id as string : "";
 
     // 該当するファイルパスのマークダウンファイルの取得
-    const postData = getPostData(["posts", "over-the-fence", "webpage"], path);
+    const postData = getPostData(["posts", "over-the-fence", "spreadsheet"], path);
 
     return {
         props: {
