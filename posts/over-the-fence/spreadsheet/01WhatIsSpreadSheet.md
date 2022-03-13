@@ -3,15 +3,15 @@ title: "01表計算ソフトとは"
 date: "2022/3/6 11:11:00"
 category: "over-the-fence"
 topics: []
-published: false
+published: true
 ---
 
-
+https://youtu.be/_VS_HISavNo
 
 # はじめに
 
-みなさんは、表計算ソフトを知っているでしょうか？
-「excel」や「google spreadsheet」と聞くと、「アレか！」となる人もいるでしょう。
+みなさんは、表計算ソフトを知っているでしょうか。
+「excel」や「GoogleSpreadsheet」と聞くと、「アレか！」となる人もいるでしょう。
 
 この連載では、そんなアレの基本的な使い方から、解説します。
 パソコンの基本的な使い方を知っている人なら、理解できるように作成します。
@@ -29,7 +29,7 @@ published: false
 大学生の頃は、実験結果をexcelでまとめていました。
 
 その汎用性の高さから、文章作成に使われたり、
-ドット絵を描くのに使われたり、
+ドット絵を描くのに使われたりします。
 excelは3Dのオブジェクトを扱うこともできます。
 youtubeには[3D Excel Art channel](https://www.youtube.com/channel/UCRuiE_Y_sCCYE7P1Qgrt5AA)なるものまであります。
 さすがに、ここまでの使い方をすることは、趣味以外ではないと思いますが、表計算ソフトの汎用性の高さがうかがえますね。
@@ -45,7 +45,7 @@ youtubeには[3D Excel Art channel](https://www.youtube.com/channel/UCRuiE_Y_sCC
 
 次回からは、実際に表計算ソフトの使い方をレクチャーします。
 
-表計算ソフトはいくつか種類があるのですが、この連載では、google spreadsheetを使おうと思います。
+表計算ソフトはいくつか種類があるのですが、この連載では、GoogleSpreadsheetを使おうと思います。
 無料で作れるgoogleのアカウントを持っていれば、誰でも利用することができるので、こちらを使います。
 この連載では基本的な内容しか扱わないので、ここで紹介した内容は少しの違いはありますが、そのままexcelでも利用できると思います。
 
