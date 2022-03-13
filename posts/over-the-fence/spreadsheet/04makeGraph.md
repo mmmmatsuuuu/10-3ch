@@ -9,7 +9,7 @@ published: false
 # はじめに
 
 今回も、実際に表計算ソフト使って見ましょう。
-この連載では、google spreadsheetを使っていきます。
+この連載では、GoogleSpreadsheetを使っていきます。
 excelを利用したいという人も基本的に、操作は似ているので参考にできると思います。
 ちなみに、使用するブラウザはchromeを想定しています。
 
