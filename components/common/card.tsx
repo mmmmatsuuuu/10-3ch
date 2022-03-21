@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PostType } from "../../pages/my-recommend";
 
 export type OverTheFenceProps = {
     title      : string;
@@ -29,6 +30,41 @@ export const OverTheFenceCard:React.FC<OverTheFenceProps> = ({
                             開く
                         </a>
                     </Link>
+                </div>
+            </div>
+    )
+}
+
+export const MyRecommendCard:React.FC<PostType> = ({
+    no, time, article, links
+}) => {
+
+    return (
+            <div className="grid grid-cols-6 p-4">
+                <div className="col-span-1 flex justify-center items-start">
+                    <img src={`${process.env.NEXT_PUBLIC_BASE_PATH }/logo.svg`} alt="icon" className="rounded-full w-24 h-24" />
+                </div>
+                <div className="col-span-5">
+                    <p className="text-gray-500 mb-2">time: { time }</p>
+                    <p >{ article }</p>
+                    <ul>
+                        { links.map(li => {
+                            if (li) {
+                                return (
+                                    <li
+                                    key={ li }
+                                    ><a 
+                                        href={ li }
+                                        className="grad-hover"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                    　　　　Link　　　　
+                                    </a></li>
+                                );
+                            }
+                        })}
+                    </ul>
                 </div>
             </div>
     )
